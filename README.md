@@ -8,6 +8,8 @@ Untuk jalankan client frontend dapat langsung
 
 ### `npm run start`
 
+Logo LOD Agency adalah route home
+
 ## Available Scripts
 
 In the project directory, you can run:
