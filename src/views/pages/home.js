@@ -43,7 +43,7 @@ export default function Home() {
                 <div className="flex flex-col justify-center items-center">
                     <div className="flex flex-row w-full">
                       {
-                        items.length === 0 && <div className="font-bold">Tidak ada menu</div>
+                        items.length === 0 && <div className="flex flex-col w-full justify-center items-center font-bold">Tidak ada menu</div>
                       }
                       <div className="flex flex-col w-full justify-center items-center">
                         {
