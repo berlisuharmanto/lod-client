@@ -2,7 +2,7 @@
 
 Untuk .env sesuaikan dengan url api
 
-Jalankan ### `npm i` untuk install dependency
+Jalankan `npm i` untuk install dependency
 
 Untuk jalankan client frontend dapat langsung
 
