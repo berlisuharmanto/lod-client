@@ -1,4 +1,9 @@
 # Getting Started with LOD Client
+Clone project
+
+```
+git clone https://github.com/berlisuharmanto/lod.git
+```
 
 Untuk .env sesuaikan dengan url api
 
