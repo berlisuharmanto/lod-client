@@ -1,3 +1,11 @@
+Untuk .env sesuaikan dengan url api
+
+Jalankan ### `npm i` untuk install dependency
+
+Untuk jalankan client frontend dapat langsung
+
+### `npm run start`
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
