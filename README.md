@@ -2,7 +2,7 @@
 Clone project
 
 ```
-git clone https://github.com/berlisuharmanto/lod.git
+git clone https://github.com/berlisuharmanto/lod-client.git
 ```
 
 Untuk .env sesuaikan dengan url api
