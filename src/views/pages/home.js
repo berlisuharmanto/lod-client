@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import Card from '../components/ItemCard';
 import Layout from './Layout';
-import { useAuthHeader } from 'react-auth-kit';
+import { useAuthHeader, useSignOut } from 'react-auth-kit';
 import { toast } from 'react-toastify';
 
 export default function Home() {
   const [items, setItems] = useState([]);
   const authHeader = useAuthHeader();
+  const signOut = useSignOut();
 
   useEffect(() => {
       fetchItems();
@@ -24,6 +25,7 @@ export default function Home() {
             return response.json();
         } else {
             return response.json().then((data) => {
+                signOut();
                 throw new Error(data.message);
             });
         }

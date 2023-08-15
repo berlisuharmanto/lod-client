@@ -3,13 +3,14 @@ import Layout from './Layout'
 import CheckoutCard from '../components/CheckoutCard'
 import AddressForm from '../components/AddressForm'
 import currencify from '../../utils/currency'
-import { useAuthHeader } from 'react-auth-kit';
+import { useAuthHeader, useSignOut } from 'react-auth-kit';
 import { toast } from 'react-toastify';
 
 export default function Checkout() {
     const [totalPrice, setTotalPrice] = useState(0);
     const [items, setItems] = useState([]);
     const authHeader = useAuthHeader();
+    const signOut = useSignOut();
   
     useEffect(() => {
         fetchItems();
@@ -27,6 +28,9 @@ export default function Checkout() {
               return response.json();
           } else {
               const data = await response.json();
+              if (response.status === 401) {
+                    signOut();
+                }
               throw new Error(data.message);
           }
       })

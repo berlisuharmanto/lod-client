@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Layout from './Layout'
 import CartCard from '../components/CartCard'
-import { useAuthHeader } from 'react-auth-kit';
+import { useAuthHeader, useSignOut } from 'react-auth-kit';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
@@ -10,6 +10,7 @@ export default function Cart() {
   const [items, setItems] = useState([]);
   const authHeader = useAuthHeader();
   const navigate = useNavigate();
+  const signOut = useSignOut();
 
   useEffect(() => {
       fetchItems();
@@ -27,6 +28,9 @@ export default function Cart() {
             return response.json();
         } else {
             const data = await response.json();
+            if (response.status === 401) {
+                signOut();
+            }
             throw new Error(data.message);
         }
     })
